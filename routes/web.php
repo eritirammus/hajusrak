@@ -44,6 +44,10 @@ Route::get('/weather', function () {
     ]);
 })->name('weather');
 
+Route::get('/google-maps', function () {
+    return Inertia::render('GMaps');
+})->name('googleMaps');
+
 Route::prefix('/getapi')->group(function () {
     Route::get('/ralf', function () {
 
@@ -67,6 +71,7 @@ Route::controller(MapController::class)->name('map. ')->group(function () {
     Route::put('/update-marker', 'update')->name('update');
     Route::delete('/destroy-marker', 'destroy')->name('destroy');
 });
+
 Route::resource('maps', MapController::class);
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
