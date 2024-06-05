@@ -46,7 +46,7 @@ Route::get('/weather', function () {
 
 Route::get('/google-maps', function () {
     return Inertia::render('GMaps');
-})->name('googleMaps');
+})->name('gmaps');
 
 Route::prefix('/getapi')->group(function () {
     Route::get('/ralf', function () {
