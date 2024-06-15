@@ -3,7 +3,7 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import { useForm } from "@inertiajs/vue3";
 
-const props = defineProps(["nekos"]);
+const props = defineProps(["products"]);
 
 const form = useForm({
   title: null,
@@ -17,7 +17,6 @@ const form = useForm({
 <template>
   <AuthenticatedLayout>
     <form
-      @submit.prevent="form.post(route('nekos.store'))"
       class="flex justify-center self-center p-5 w-2/2"
     >
       <div class="p-12 bg-white mx-auto rounded-3xl w-96">

@@ -13,10 +13,7 @@ import Radar from '@/Pages/Radar.vue';
     <Head title="© Google maps" />
 
     <AuthenticatedLayout>
-        <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">© Google maps</h2>
-        </template>
-
+        
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <!-- <div id="map" class="h-96 rounded-md border-2 border-grat-200"></div> -->
@@ -64,11 +61,12 @@ import Radar from '@/Pages/Radar.vue';
                     </div>
                     <div class="w-fit flex gap-2">
                         <button @click="focusOnMarker(marker.lat, marker.lng)"
-                            class="w-fit px-4 py-2 border-2 border-gray-200 rounded" type="submit">Focus</button>
+                            class="w-fit p-2 border-2 border-gray-200 rounded" type="submit">Focus</button>
                         <button @click="editMarker(marker)" class="w-fit px-4 py-2 border-2 border-gray-200 rounded"
                             type="submit">Edit</button>
                         <button @click="deletePoint(marker.id)" class="w-fit px-4 py-2 border-2 border-red-500 rounded"
                             type="submit">Delete</button>
+                        
                     </div>
                 </div>
             </div>

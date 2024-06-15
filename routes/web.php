@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\ChirpController;
 use App\Http\Controllers\CommentController;
-use App\Http\Controllers\NekoController;
 use App\Http\Controllers\MapController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProfileController;
