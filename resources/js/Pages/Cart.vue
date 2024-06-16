@@ -1,25 +1,43 @@
-<script setup>
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
-import GuestLayout from '@/Layouts/Layout.vue';
-
-
-</script>
-
-
 <template>
-    <AuthenticatedLayout>
-        <div class="flex justify-center self-center p-5 w-2/2">
-            <div class="p-12 bg-white mx-auto rounded-3xl w-96">
-                <div class="mb-7">
-                    <h3 class="font-semibold text-2xl text-gray-800">Cart</h3>
-                </div>
-                <div class="space-y-6">
-                    <div>
-                        <p>Cart is empty</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </AuthenticatedLayout>
-</template>
+    <div>
+      <!-- Product List -->
+      <div v-for="product in products" :key="product.id">
+        <h2>{{ product.name }}</h2>
+        <button @click="addToCart(product)">Add to Cart</button>
+      </div>
+  
+      <!-- Shopping Cart -->
+      <div v-for="item in cart" :key="item.product.id">
+        <h2>{{ item.product.name }}</h2>
+        <p>Quantity: {{ item.quantity }}</p>
+        <button @click="removeFromCart(item.product)">Remove</button>
+      </div>
+    </div>
+  </template>
+  
+  <script>
+  export default {
+    data() {
+      return {
+        products: [], // Fetch your products from the server
+        cart: []
+      };
+    },
+    methods: {
+      addToCart(product) {
+        let cartItem = this.cart.find(item => item.product.id === product.id);
+        if (cartItem) {
+          cartItem.quantity++;
+        } else {
+          this.cart.push({ product: product, quantity: 1 });
+        }
+      },
+      removeFromCart(product) {
+        let index = this.cart.findIndex(item => item.product.id === product.id);
+        if (index !== -1) {
+          this.cart.splice(index, 1);
+        }
+      }
+    }
+  };
+  </script>

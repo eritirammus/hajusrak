@@ -6,6 +6,7 @@ import DropdownLink from "@/Components/DropdownLink.vue";
 import NavLink from "@/Components/NavLink.vue";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink.vue";
 import { Link } from "@inertiajs/vue3";
+import { ShoppingCart } from "lucide-vue-next";
 
 const showingNavigationDropdown = ref(false);
 </script>
@@ -39,12 +40,12 @@ const showingNavigationDropdown = ref(false);
                 >
                   Weather
                 </NavLink>
-              
+
                 <NavLink
                   :active="route().current('chirps.index')"
                   :href="route('chirps.index')"
                 >
-                  Twitter
+                  Chirps
                 </NavLink>
                 <NavLink
                   :active="route().current('gmaps')"
@@ -74,7 +75,7 @@ const showingNavigationDropdown = ref(false);
                   :active="route().current('cart')"
                   :href="route('cart')"
                 >
-                  Cart
+                  <ShoppingCart color="black" :size="28" />
                 </NavLink>
               </div>
             </div>
@@ -86,7 +87,7 @@ const showingNavigationDropdown = ref(false);
                   <template #trigger>
                     <span class="inline-flex rounded-md">
                       <button
-                        class="inline-flex items-center px-5 py-2 border border-transparent text-xl leading-4 font-medium rounded-md text-gray-500 bg-gray-100 hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
+                        class="inline-flex items-center px-5 py-2 border border-transparent text-lg leading-4 rounded-md text-white bg-black hover:text-gray-400 focus:outline-none transition ease-in-out duration-150"
                         type="button"
                       >
                         {{ $page.props.auth.user.name }}

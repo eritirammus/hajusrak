@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Stripe\PaymentIntent;
 use Stripe\Stripe;
 
+
 class store extends Controller
 {
     public function index()
