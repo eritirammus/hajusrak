@@ -48,16 +48,10 @@ const showingNavigationDropdown = ref(false);
                   Chirps
                 </NavLink>
                 <NavLink
-                  :active="route().current('GMaps')"
-                  :href="route('GMaps')"
+                  :active="route().current('gmaps')"
+                  :href="route('gmaps')"
                 >
                   Maps
-                </NavLink>
-                <NavLink
-                  :active="route().current('chirps.index')"
-                  :href="route('chirps.index')"
-                >
-                  Chirps
                 </NavLink>
                 <NavLink
                   :active="route().current('ralf')"

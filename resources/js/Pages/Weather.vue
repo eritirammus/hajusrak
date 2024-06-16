@@ -44,7 +44,7 @@ console.log(props.weather.weather[0].icon);
   <Head title="Weather" />
   <GuestLayout>
     <div
-      class="flex flex-col items-center justify-center bg-gray-200 dark:bg-gray-950 min-h-screen bg-center selection:bg-gray-950 selection:text-gray-800"
+      class="flex flex-col text-left items-center justify-center bg-gray-200 dark:bg-gray-950 min-h-screen bg-center selection:bg-gray-950 selection:text-gray-800"
     >
       <span>Location: {{ weather.name }} maakond</span>
       <span>Date and time: {{ timeConverter(weather.dt) }}</span>
